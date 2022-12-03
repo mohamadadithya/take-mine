@@ -39,21 +39,21 @@
 		<button
 			type="button"
 			on:click={() => isOpenSidebar.set(true)}
-			class="text-2xl block md:hidden text-primary rounded-lg"
+			class="text-2xl block md:hidden text-primary-700 rounded-lg"
 		>
 			<i class="fas fa-bars" />
 		</button>
 		<div
 			class="ring-2 w-48 md:w-auto mx-2 md:mr-4 md:ml-0 ring-transparent focus-within:bg-transparent bg-gray-100 rounded-md py-1.5 flex items-center px-3"
 		>
-			<i class="fas fa-fw fa-search text-primary" />
+			<i class="fas fa-fw fa-search text-primary-700" />
 			<input
 				type="text"
 				class="w-full outline-none bg-transparent px-2 placeholder:text-black"
 				placeholder="Search..."
 			/>
 		</div>
-		<div class="flex items-center text-primary">
+		<div class="flex items-center text-primary-700">
 			<button type="button" class="text-xl mr-2 md:mr-4">
 				<i class="fas fa-fw fa-moon" />
 			</button>

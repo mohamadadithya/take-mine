@@ -1,4 +1,11 @@
-export const links = [
+type Link = {
+    name: string,
+    path?: string,
+    icon: string,
+    nested_links?: any
+}
+
+export const links: Link[] = [
     {
         name: 'Dashboard',
         path: '/',
@@ -26,7 +33,18 @@ export const links = [
     },
     {
         name: 'Pages',
-        path: '/pages',
         icon: 'fa-memo',
+        nested_links: [
+            {
+                name: 'Login',
+                path: '/login',
+                icon: 'fa-sign-in',
+            },
+            {
+                name: 'Register',
+                path: '/register',
+                icon: 'fa-user',
+            }
+        ],
     }
 ]

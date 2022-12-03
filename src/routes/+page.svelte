@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Chart from '$lib/components/Chart.svelte';
+	import Card from '$lib/components/Card.svelte';
+import Chart from '$lib/components/Chart.svelte';
 	import IconWithBackground from '$lib/components/IconWithBackground.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 
@@ -66,13 +67,16 @@
 			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
 		}
 	};
+
+    export let data;
+    const cards = data.cards;
 </script>
 
 <section>
 	<PageTitle name="Dashboard" />
 	<a
-		href="/"
-		class="w-full flex justify-between items-center p-4 text-sm hover:bg-emerald-800 bg-emerald-700 text-white rounded-lg mt-5"
+		href="https://github.com/mohamadadithya/take-mine"
+		class="w-full flex justify-between items-center p-4 text-sm hover:bg-primary-800 bg-primary-700 text-white rounded-lg mt-5"
 	>
 		<div class="flex items-center">
 			<i class="fas fa-fw fa-star mr-2.5" />
@@ -83,37 +87,17 @@
 			<i class="fas fa-fw fa-arrow-right" />
 		</div>
 	</a>
-	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
-		<div id="card" class="bg-white shadow-lg rounded-xl p-5 flex items-center">
-            <IconWithBackground icon="fa-users" textColor="text-emerald-700" background="bg-emerald-100" />
-			<div>
-				<h6 class="mb-2 text-sm">Total Members</h6>
-				<p class="font-bold text-3xl">80,730</p>
-			</div>
-		</div>
-		<div id="card" class="bg-white shadow-lg rounded-xl p-5 flex items-center">
-            <IconWithBackground icon="fa-money-bills" textColor="text-sky-700" background="bg-sky-100" />
-			<div>
-				<h6 class="mb-2 text-sm">Account Balance</h6>
-				<p class="font-bold text-3xl">Rp. 1,5M</p>
-			</div>
-		</div>
-		<div id="card" class="bg-white shadow-lg rounded-xl p-5 flex items-center">
-            <IconWithBackground icon="fa-video-arrow-up-right" textColor="text-red-700" background="bg-red-100" />
-			<div>
-				<h6 class="mb-2 text-sm">Live Events</h6>
-				<p class="font-bold text-3xl">50</p>
-			</div>
-		</div>
-		<div id="card" class="bg-white shadow-lg rounded-xl p-5 flex items-center">
-            <IconWithBackground icon="fa-boxes-stacked" textColor="text-indigo-700" background="bg-indigo-100" />
-			<div>
-				<h6 class="mb-2 text-sm">Total Products</h6>
-				<p class="font-bold text-3xl">120</p>
-			</div>
-		</div>
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+		{#each cards as card }
+            <Card classes="flex items-center">
+                <IconWithBackground icon={card.icon} textColor={card.colors.text} background={card.colors.background} />
+                <div>
+                    <h6 class="mb-2 text-sm">{card.name}</h6>
+                    <p class="font-bold text-3xl">{card.value}</p>
+                </div>
+            </Card>
+        {/each}
 	</div>
-
 	<div class="grid lg:grid-cols-2 gap-8 mt-10">
 		<Chart options={barOptions} />
 		<Chart options={lineOptions} />
