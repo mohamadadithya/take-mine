@@ -78,7 +78,8 @@
 					</div>
 					<ul class="mt-5">
 						<li>
-							<a href="/" class="flex items-start hover:bg-gray-100 px-5 py-3">
+							<!-- Is not read add background -->
+							<a href="/" class="flex items-start notification not-read px-5 py-3">
 								<img src="/images/profile.svg" class="w-10 mr-3" alt="Username" />
 								<div class="overflow-hidden">
 									<p class="font-medium">John Doe</p>

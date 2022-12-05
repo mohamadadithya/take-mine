@@ -32,5 +32,7 @@ $: routeId = $page.route.id;
             {/each}
         </ul>
     </div>
-    <footer class="px-6 text-xs absolute bottom-6 text-gray-700">&copy; 2022 Mohamad Adithya</footer>
+    {#if !isMinimalize }
+        <footer class="px-6 text-xs absolute bottom-6 text-gray-700">&copy; 2022 Mohamad Adithya</footer>
+    {/if}
 </aside>

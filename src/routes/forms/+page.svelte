@@ -3,6 +3,7 @@
 import Card from "$lib/components/Card.svelte";
 	import Input from "$lib/components/Input.svelte";
 	import PageTitle from "$lib/components/PageTitle.svelte";
+	import Radio from "$lib/components/Radio.svelte";
 	import Toggle from "$lib/components/Toggle.svelte";
 </script>
 <PageTitle name="Forms" />
@@ -33,6 +34,10 @@ import Card from "$lib/components/Card.svelte";
 					<Input name="name" id="name" placeholder="Enter your name" />
 					<div class="input-primary mb-5">
 						<textarea name="message" class="outline-none" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+					</div>
+					<div class="flex items-center">
+						<Radio id="man" checked={true} name="gender" label="Man" />
+						<Radio id="woman" name="gender" label="Woman" />
 					</div>
 					<Button type="submit" name="Send" icon="fa-paper-plane" />
 				</form>

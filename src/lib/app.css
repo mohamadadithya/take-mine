@@ -9,3 +9,7 @@
 a {
     @apply text-sky-600
 }
+
+.notification:is(.not-read) {
+    @apply hover:bg-gray-50 bg-gray-100
+}
