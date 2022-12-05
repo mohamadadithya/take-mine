@@ -18,7 +18,7 @@
     <ul class="ml-8">
         {#each nestedLinks as link }
             <li>
-                <a href={link.path} class="px-4 py-4 border-l-4 border-transparent {link.path == routeId ? 'border-l-primary-700 bg-primary-100 text-black' : 'text-gray-500'} hover:bg-primary-50 hover:text-black font-medium block duration-200"><i class="far fa-fw {link.icon} text-lg {isMinimalize ? '' : 'mr-3'}"></i> <span class="{isMinimalize ? 'hidden' : ''}">{link.name}</span></a>
+                <a href={link.path} class="px-4 py-4 border-l-4 border-transparent {link.path == routeId ? 'border-l-primary-700 bg-primary-100 text-black' : 'text-gray-500'} hover:bg-primary-50 hover:text-black font-medium block duration-200"><i class="{link.path == routeId ? 'fas' : 'far'} fa-fw {link.icon} text-lg {isMinimalize ? '' : 'mr-3'}"></i> <span class="{isMinimalize ? 'hidden' : ''}">{link.name}</span></a>
             </li>
         {/each}
     </ul>

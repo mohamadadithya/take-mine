@@ -3,7 +3,7 @@ import { isOpenSidebar } from "$lib/stores/dashboardStore";
 import { page } from '$app/stores';
 import { links } from '../data/links';
 import { Settings } from "$lib/settings";
-	import NavDropdownLink from "./NavDropdownLink.svelte";
+import NavDropdownLink from "./NavDropdownLink.svelte";
 
 let routeId: any;
 let isMinimalize = false;
@@ -24,7 +24,7 @@ $: routeId = $page.route.id;
             {#each links as link }
                 <li>
                     {#if link.path }
-                        <a href={link.path} class="px-4 py-4 border-l-4 border-transparent {link.path == routeId ? 'border-l-primary-700 bg-primary-100 text-black' : 'text-gray-500'} hover:bg-primary-50 hover:text-black font-medium block duration-200"><i class="far fa-fw {link.icon} text-lg {isMinimalize ? '' : 'mr-3'}"></i> <span class="{isMinimalize ? 'hidden' : ''}">{link.name}</span></a>
+                        <a href={link.path} class="px-4 py-4 border-l-4 border-transparent {link.path == routeId ? 'border-l-primary-700 bg-primary-100 text-black' : 'text-gray-500'} hover:bg-primary-50 hover:text-black font-medium block duration-200"><i class="{link.path == routeId ? 'fas' : 'far'} fa-fw {link.icon} text-lg {isMinimalize ? '' : 'mr-3'}"></i> <span class="{isMinimalize ? 'hidden' : ''}">{link.name}</span></a>
                     {:else}
                         <NavDropdownLink nestedLinks={link?.nested_links} {link} {routeId} {isMinimalize} />
                     {/if}
@@ -32,4 +32,5 @@ $: routeId = $page.route.id;
             {/each}
         </ul>
     </div>
+    <footer class="px-6 text-xs absolute bottom-6 text-gray-700">&copy; 2022 Mohamad Adithya</footer>
 </aside>
