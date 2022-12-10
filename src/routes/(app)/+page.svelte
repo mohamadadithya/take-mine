@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
-import Chart from '$lib/components/Chart.svelte';
+	import Chart from '$lib/components/Chart.svelte';
 	import IconWithBackground from '$lib/components/IconWithBackground.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
+	import Table from '$lib/components/Table.svelte';
 
 	const barOptions = {
 		chart: {
@@ -87,7 +88,7 @@ import Chart from '$lib/components/Chart.svelte';
 			<i class="fas fa-fw fa-arrow-right" />
 		</div>
 	</a>
-	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+	<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
 		{#each cards as card }
             <Card classes="flex items-center">
                 <IconWithBackground icon={card.icon} textColor={card.colors.text} background={card.colors.background} />
@@ -98,6 +99,7 @@ import Chart from '$lib/components/Chart.svelte';
             </Card>
         {/each}
 	</div>
+	<Table classes="mt-8" />
 	<div class="grid lg:grid-cols-2 gap-8 mt-10">
 		<Chart options={barOptions} />
 		<Chart options={lineOptions} />

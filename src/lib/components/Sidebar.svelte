@@ -8,7 +8,7 @@ import NavDropdownLink from "./NavDropdownLink.svelte";
 let routeId: any;
 let isMinimalize = false;
 
-$: routeId = $page.route.id;
+$: routeId = $page.url.pathname;
 </script>
 
 <aside class="overflow-y-auto h-full fixed {$isOpenSidebar ? 'translate-x-0' : '-translate-x-full'} duration-300 md:translate-x-0 md:static z-20 md:block {isMinimalize ? 'w-fit' : 'w-60 md:w-56 lg:w-64'} bg-white flex-shrink-0 border-r">
@@ -24,7 +24,7 @@ $: routeId = $page.route.id;
             {#each links as link }
                 <li>
                     {#if link.path }
-                        <a href={link.path} class="px-4 py-4 border-l-4 border-transparent {link.path == routeId ? 'border-l-primary-700 bg-primary-100 text-black' : 'text-gray-500'} hover:bg-primary-50 hover:text-black font-medium block duration-200"><i class="{link.path == routeId ? 'fas' : 'far'} fa-fw {link.icon} text-lg {isMinimalize ? '' : 'mr-3'}"></i> <span class="{isMinimalize ? 'hidden' : ''}">{link.name}</span></a>
+                        <a href={link.path} class="px-4 py-4 border-l-4 border-transparent {link.path == routeId ? 'border-l-primary-700 bg-primary-100 text-primary-700 hover:text-primary-700' : 'text-gray-500'} hover:bg-gray-50 hover:text-black font-medium block duration-200"><i class="{link.path == routeId ? 'fas' : 'far'} fa-fw {link.icon} text-lg {isMinimalize ? '' : 'mr-3'}"></i> <span class="{isMinimalize ? 'hidden' : ''}">{link.name}</span></a>
                     {:else}
                         <NavDropdownLink nestedLinks={link?.nested_links} {link} {routeId} {isMinimalize} />
                     {/if}

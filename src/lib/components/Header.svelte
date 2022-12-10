@@ -34,7 +34,7 @@
 	};
 </script>
 
-<header class="z-10 border-b p-4 md:px-6">
+<header class="z-10 p-4 md:px-6">
 	<nav class="flex justify-between items-center">
 		<button
 			type="button"
@@ -82,7 +82,7 @@
 							<a href="/" class="flex items-start notification not-read px-5 py-3">
 								<img src="/images/profile.svg" class="w-10 mr-3" alt="Username" />
 								<div class="overflow-hidden">
-									<p class="font-medium">John Doe</p>
+									<p class="font-medium text-primary-700">John Doe</p>
 									<p class="text-sm text-gray-500 truncate">
 										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, saepe.
 									</p>
@@ -94,7 +94,7 @@
 							<a href="/" class="flex items-start hover:bg-gray-100 px-5 py-3">
 								<img src="/images/profile.svg" class="w-10 mr-3" alt="Username" />
 								<div class="overflow-hidden">
-									<p class="font-medium">John Doe</p>
+									<p class="font-medium text-primary-700">John Doe</p>
 									<p class="text-sm text-gray-500 truncate">
 										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, saepe.
 									</p>
