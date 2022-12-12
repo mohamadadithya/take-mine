@@ -15,6 +15,6 @@
 	});
 </script>
 
-<div class="shadow-xl rounded-xl p-5">
+<div class="shadow-xl rounded-xl p-3 md:p-5">
     <div bind:this={chartEl} />
 </div>

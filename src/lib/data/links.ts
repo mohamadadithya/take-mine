@@ -27,11 +27,6 @@ export const links: Link[] = [
         icon: 'fa-chart-pie',
     },
     {
-        name: 'Buttons',
-        path: '/buttons',
-        icon: 'fa-rectangles-mixed',
-    },
-    {
         name: 'Pages',
         icon: 'fa-memo',
         nested_links: [

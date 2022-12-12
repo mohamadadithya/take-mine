@@ -9,5 +9,5 @@
 
 <section>
     <Button on:click={() => isShowedToast.set(true)} type="button" name="Toast Me" />
-    <Toast />
+    <Toast type="warning" message="Item moved successfully" />
 </section>

@@ -6,6 +6,10 @@
 	@apply border w-full px-3 py-2 rounded-lg ring-primary-700 focus-within:ring-2 focus-within:ring-offset-2;
 }
 
+label {
+	@apply cursor-pointer
+}
+
 a {
 	@apply text-sky-600;
 }
