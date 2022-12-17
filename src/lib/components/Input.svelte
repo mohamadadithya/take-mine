@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let helpText: string = '', classes: string = 'mb-4', label: string = '', id: string, name: string, placeholder: string = '', type: string = 'text', icon: string = '';
+    export let helpText: string = '', classes: string = 'mb-4', label: string = '', id: string, name: string, placeholder: string = '', type: string = 'text', icon: string = '', autocomplete: string = 'off';
 </script>
 
 <div class={classes}>
@@ -10,7 +10,7 @@
         {#if icon }
             <i class="{icon} mr-2 text-gray-400"></i>
         {/if}
-        <input type={type} class="w-full outline-none" {id} {name} {placeholder}>
+        <input type={type} class="w-full outline-none" {id} {name} {placeholder} {autocomplete}>
     </div>
     {#if helpText }
         <p class="mt-1.5 text-sm inline-block text-gray-500">{helpText}</p>

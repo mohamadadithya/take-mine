@@ -24,7 +24,7 @@
 				<h3 class="text-xl font-semibold mb-4">Get More Updates</h3>
 				<p class="text-gray-500 text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis magnam ipsum unde voluptatibus explicabo saepe ipsam nemo adipisci. Corporis, molestias?</p>
 				<form class="md:flex justify-between items-center">
-					<Input type="email" id="email" name="email" classes="mb-0 flex-1" placeholder="Your email address..." icon="fas fa-fw fa-envelope" />
+					<Input type="email" id="email-subscribe" name="email-subscribe" classes="mb-0 flex-1" placeholder="Your email address..." icon="fas fa-fw fa-envelope" />
 					<Button classes="md:ml-3 mt-3 md:mt-0 flex-[0.1]" width="w-full" type="submit" name="Subscribe" />
 				</form>
 				<p class="text-xs text-gray-600 mt-3">By subscribing, you agree with Take Mine's <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>.</p>

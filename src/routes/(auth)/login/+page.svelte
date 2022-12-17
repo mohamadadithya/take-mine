@@ -61,7 +61,7 @@
                     <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover" src="/images/profile-1.jpg" alt="Username">
                     <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover" src="/images/profile-2.jpg" alt="Username">
                     <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover" src="/images/profile-3.jpg" alt="Username">
-                    <a class="flex justify-center items-center w-10 h-10 text-xs font-medium text-white bg-gray-700 rounded-full border-2 border-white hover:bg-gray-600 dark:border-gray-800" href="#">+99</a>
+                    <a class="flex justify-center items-center w-10 h-10 text-xs font-medium text-white bg-gray-700 rounded-full border-2 border-white hover:bg-gray-600 dark:border-gray-800" href="/">+99</a>
                 </div>
                 <p class="pl-5 border-l border-gray-300">Over <strong>15.7k</strong> Happy Customers</p>
             </div>

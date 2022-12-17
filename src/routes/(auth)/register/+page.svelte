@@ -42,12 +42,12 @@ import Divider from "$lib/components/Divider.svelte";
                 <Input placeholder="name@company.com" label="Your email" type="email" name="email" id="email" />
                 <Input placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;" label="Your password" type="password" name="password" id="password" />
                 <div class="flex items-start mb-3">
-                    <input class="accent-primary-700" type="checkbox" name="checkbox" id="checkbox">
-                    <label for="checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">By signing up, you are creating a {Settings.SITE_NAME} account, and you agree to {Settings.SITE_NAME}'s <a href="/">Terms of Use</a> and <a href="/">Privacy Policy</a>.</label>
+                    <input class="accent-primary-700" type="checkbox" name="checkbox-tos" id="checkbox-tos">
+                    <label for="checkbox-tos" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">By signing up, you are creating a {Settings.SITE_NAME} account, and you agree to {Settings.SITE_NAME}'s <a href="/">Terms of Use</a> and <a href="/">Privacy Policy</a>.</label>
                 </div>
                 <div class="flex items-start">
-                    <input class="accent-primary-700" type="checkbox" name="checkbox" id="checkbox">
-                    <label for="checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email me about product updates and resources.</label>
+                    <input class="accent-primary-700" type="checkbox" name="checkbox-subscribe" id="checkbox-subscribe">
+                    <label for="checkbox-subscribe" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email me about product updates and resources.</label>
                 </div>
                 <Button type="button" classes="w-full mt-8 mb-5 font-medium" name="Create an account" />
                 <p class="text-sm text-gray-600">Already have an account? <a href="/login" class="font-medium">Sign In</a></p>
@@ -62,7 +62,7 @@ import Divider from "$lib/components/Divider.svelte";
                     <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover" src="/images/profile-1.jpg" alt="Username">
                     <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover" src="/images/profile-2.jpg" alt="Username">
                     <img class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800 object-cover" src="/images/profile-3.jpg" alt="Username">
-                    <a class="flex justify-center items-center w-10 h-10 text-xs font-medium text-white bg-gray-700 rounded-full border-2 border-white hover:bg-gray-600 dark:border-gray-800" href="#">+99</a>
+                    <a class="flex justify-center items-center w-10 h-10 text-xs font-medium text-white bg-gray-700 rounded-full border-2 border-white hover:bg-gray-600 dark:border-gray-800" href="/">+99</a>
                 </div>
                 <p class="pl-5 border-l border-gray-300">Over <strong>15.7k</strong> Happy Customers</p>
             </div>
