@@ -7,7 +7,7 @@
 }
 
 label {
-	@apply cursor-pointer
+	@apply cursor-pointer;
 }
 
 a {
@@ -16,4 +16,8 @@ a {
 
 .notification:is(.not-read) {
 	@apply hover:bg-gray-50 bg-gray-100;
+}
+
+.field-group > label {
+	@apply inline-block mb-2;
 }

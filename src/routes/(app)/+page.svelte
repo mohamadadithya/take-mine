@@ -10,7 +10,7 @@
 			type: 'bar'
 		},
 		colors: ['#047857'],
-        title: {
+		title: {
 			text: 'Joined Members by Month',
 			align: 'left'
 		},
@@ -69,15 +69,15 @@
 		}
 	};
 
-    export let data;
-    const cards = data.cards;
+	export let data;
+	const cards = data.cards;
 </script>
 
 <section>
 	<PageTitle name="Dashboard" />
 	<a
 		href="https://github.com/mohamadadithya/take-mine"
-		class="w-full flex justify-between items-center p-4 text-sm hover:bg-primary-800 bg-primary-700 text-white rounded-lg mt-5"
+		class="w-full flex justify-between items-center p-4 text-sm hover:bg-primary-800 bg-primary-700 text-white rounded-lg mt-3"
 	>
 		<div class="flex items-center">
 			<i class="fas fa-fw fa-star mr-2.5" />
@@ -89,15 +89,19 @@
 		</div>
 	</a>
 	<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
-		{#each cards as card }
-            <Card classes="flex items-center">
-                <IconWithBackground icon={card.icon} textColor={card.colors.text} background={card.colors.background} />
-                <div>
-                    <h6 class="mb-2 text-sm">{card.name}</h6>
-                    <p class="font-bold text-3xl">{card.value}</p>
-                </div>
-            </Card>
-        {/each}
+		{#each cards as card}
+			<Card classes="flex items-center">
+				<IconWithBackground
+					icon={card.icon}
+					textColor={card.colors.text}
+					background={card.colors.background}
+				/>
+				<div>
+					<h6 class="mb-2 text-sm">{card.name}</h6>
+					<p class="font-bold text-3xl">{card.value}</p>
+				</div>
+			</Card>
+		{/each}
 	</div>
 	<Table classes="mt-8" />
 	<div class="grid lg:grid-cols-2 gap-8 mt-10">

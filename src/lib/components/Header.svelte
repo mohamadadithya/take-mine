@@ -11,7 +11,7 @@
 		{
 			name: 'Settings',
 			path: '/settings',
-			icon: 'fa-gear'
+			icon: 'fa-cog'
 		},
 		{
 			name: 'Logout',
@@ -34,7 +34,7 @@
 	};
 </script>
 
-<header class="z-10 p-4 md:px-6">
+<header class="z-10 p-4 md:px-6 bg-white shadow-sm border-b">
 	<nav class="flex justify-between items-center">
 		<button
 			type="button"

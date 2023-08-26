@@ -1,45 +1,45 @@
 type Link = {
-    name: string,
-    path?: string,
-    icon: string,
-    nested_links?: any
-}
+	name: string;
+	path?: string;
+	icon: string;
+	nested_links?: Link[];
+};
 
 export const links: Link[] = [
-    {
-        name: 'Dashboard',
-        path: '/',
-        icon: 'fa-house',
-    },
-    {
-        name: 'Forms',
-        path: '/forms',
-        icon: 'fa-clipboard-list-check',
-    },
-    {
-        name: 'Cards',
-        path: '/cards',
-        icon: 'fa-cards-blank',
-    },
-    {
-        name: 'Charts',
-        path: '/charts',
-        icon: 'fa-chart-pie',
-    },
-    {
-        name: 'Pages',
-        icon: 'fa-memo',
-        nested_links: [
-            {
-                name: 'Login',
-                path: '/login',
-                icon: 'fa-sign-in',
-            },
-            {
-                name: 'Register',
-                path: '/register',
-                icon: 'fa-user',
-            }
-        ],
-    }
-]
+	{
+		name: 'Dashboard',
+		path: '/',
+		icon: 'fa-house'
+	},
+	{
+		name: 'Forms',
+		path: '/forms',
+		icon: 'fa-clipboard-list-check'
+	},
+	{
+		name: 'Cards',
+		path: '/cards',
+		icon: 'fa-credit-card-blank'
+	},
+	{
+		name: 'Charts',
+		path: '/charts',
+		icon: 'fa-chart-pie'
+	},
+	{
+		name: 'Pages',
+		icon: 'fa-copy',
+		nested_links: [
+			{
+				name: 'Login',
+				path: '/login',
+				icon: 'fa-sign-in'
+			},
+			{
+				name: 'Register',
+				path: '/register',
+				icon: 'fa-user'
+			}
+		]
+	}
+];
