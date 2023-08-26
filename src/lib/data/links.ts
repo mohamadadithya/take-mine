@@ -1,9 +1,9 @@
-type Link = {
+interface Link {
 	name: string;
 	path?: string;
 	icon: string;
 	nested_links?: Link[];
-};
+}
 
 export const links: Link[] = [
 	{
@@ -38,3 +38,5 @@ export const links: Link[] = [
 		]
 	}
 ];
+
+export type { Link };

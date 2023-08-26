@@ -1,6 +1,8 @@
 <script lang="ts">
+	import type { Link } from '$lib/data/links';
+
 	export let isOpen: boolean = false;
-	export let links: any = [];
+	export let links: Link[] = [];
 </script>
 
 <div class="relative">

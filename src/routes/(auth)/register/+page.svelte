@@ -6,7 +6,7 @@
 	<title>Register</title>
 </svelte:head>
 
-<section id="register">
+<section id="register" class="bg-white">
 	<div class="grid xl:grid-cols-2 items-center">
 		<div class="p-6 md:p-16 max-w-2xl mx-auto">
 			<h1 class="text-2xl font-bold mb-5">Your Best Work Starts Here</h1>

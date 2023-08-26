@@ -23,7 +23,7 @@
 	let isOpenNotifications = false;
 	let isOpenDropdown = false;
 
-	const handleState = (el: any) => {
+	const handleState = (el: 'dropdown' | 'notifications') => {
 		if (el == 'dropdown') {
 			isOpenDropdown = !isOpenDropdown;
 			isOpenNotifications = false;
