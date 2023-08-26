@@ -17,6 +17,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "^1.23.0",
 		"@sveltejs/package": "^2.2.1",
+		"@types/nprogress": "^0.2.0",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",
 		"@typescript-eslint/parser": "^5.62.0",
 		"autoprefixer": "^10.4.15",
@@ -36,7 +37,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/poppins": "^5.0.8",
 		"apexcharts": "^3.42.0",
+		"nprogress": "^0.2.0",
 		"tailwind-merge": "^1.14.0"
 	}
 }
