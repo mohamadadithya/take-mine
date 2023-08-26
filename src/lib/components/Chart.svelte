@@ -9,7 +9,9 @@
 		const ApexCharts = (await import('apexcharts')).default;
 
 		if (chartWrapperEl) {
-			if (options.chart) options.chart.redrawOnParentResize = true;
+			if (options.chart) {
+				options.chart.redrawOnParentResize = true;
+			}
 
 			const chart = new ApexCharts(chartWrapperEl, options);
 			chart.render();
