@@ -1,40 +1,132 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
+	import Chart from '$lib/components/Chart.svelte';
 	import IconWithBackground from '$lib/components/IconWithBackground.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import Table from '$lib/components/Table.svelte';
-	import ChartJS from 'chart.js/auto';
-	import { onMount } from 'svelte';
-
-	let barChartEl: HTMLCanvasElement;
-
-	onMount(() => {
-		new ChartJS(barChartEl, {
-			type: 'bar',
-			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-				datasets: [
-					{
-						label: '# of Votes',
-						data: [12, 19, 3, 5, 2, 3],
-						borderWidth: 1
-					}
-				]
-			},
-			options: {
-				maintainAspectRatio: false,
-				scales: {
-					y: {
-						beginAtZero: true
-					}
-				},
-				responsive: true
-			}
-		});
-	});
+	import type { ApexOptions } from 'apexcharts';
 
 	export let data;
 	const cards = data.cards;
+
+	const barChartOptions: ApexOptions = {
+		series: [
+			{
+				name: 'Actual',
+				data: [
+					{
+						x: '2011',
+						y: 12,
+						goals: [
+							{
+								name: 'Expected',
+								value: 14,
+								strokeWidth: 2,
+								strokeDashArray: 2,
+								strokeColor: '#775DD0'
+							}
+						]
+					},
+					{
+						x: '2012',
+						y: 44,
+						goals: [
+							{
+								name: 'Expected',
+								value: 54,
+								strokeWidth: 5,
+								strokeHeight: 10,
+								strokeColor: '#775DD0'
+							}
+						]
+					},
+					{
+						x: '2013',
+						y: 54,
+						goals: [
+							{
+								name: 'Expected',
+								value: 52,
+								strokeWidth: 10,
+								strokeHeight: 0,
+								strokeLineCap: 'round',
+								strokeColor: '#775DD0'
+							}
+						]
+					},
+					{
+						x: '2014',
+						y: 66,
+						goals: [
+							{
+								name: 'Expected',
+								value: 61,
+								strokeWidth: 10,
+								strokeHeight: 0,
+								strokeLineCap: 'round',
+								strokeColor: '#775DD0'
+							}
+						]
+					},
+					{
+						x: '2015',
+						y: 81,
+						goals: [
+							{
+								name: 'Expected',
+								value: 66,
+								strokeWidth: 10,
+								strokeHeight: 0,
+								strokeLineCap: 'round',
+								strokeColor: '#775DD0'
+							}
+						]
+					},
+					{
+						x: '2016',
+						y: 67,
+						goals: [
+							{
+								name: 'Expected',
+								value: 70,
+								strokeWidth: 5,
+								strokeHeight: 10,
+								strokeColor: '#775DD0'
+							}
+						]
+					}
+				]
+			}
+		],
+		chart: {
+			height: 350,
+			type: 'bar'
+		},
+		plotOptions: {
+			bar: {
+				horizontal: true
+			}
+		},
+		colors: ['#00E396'],
+		dataLabels: {
+			formatter: function (val: number, opt) {
+				const goals = opt.w.config.series[opt.seriesIndex].data[opt.dataPointIndex].goals;
+
+				if (goals && goals.length) {
+					return `${val} / ${goals[0].value}`;
+				}
+				return val;
+			}
+		},
+		legend: {
+			show: true,
+			showForSingleSeries: true,
+			customLegendItems: ['Actual', 'Expected'],
+			markers: {
+				fillColors: ['#00E396', '#775DD0']
+			}
+		}
+	};
 </script>
 
 <section>
@@ -69,8 +161,6 @@
 	</div>
 	<Table classes="mt-8" />
 	<div class="grid lg:grid-cols-2 gap-8 mt-10">
-		<div class="shadow-md bg-white p-3 border rounded-xl h-[25rem]">
-			<canvas class="w-full" bind:this={barChartEl} />
-		</div>
+		<Chart options={barChartOptions} />
 	</div>
 </section>
