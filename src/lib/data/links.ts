@@ -22,11 +22,6 @@ export const links: Link[] = [
 		icon: 'fa-credit-card-blank'
 	},
 	{
-		name: 'Charts',
-		path: '/charts',
-		icon: 'fa-chart-pie'
-	},
-	{
 		name: 'Pages',
 		icon: 'fa-copy',
 		nested_links: [

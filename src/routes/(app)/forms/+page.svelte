@@ -56,8 +56,8 @@
 					<fieldset class="grid gap-4">
 						<input
 							type="text"
-							name="username"
-							id="username"
+							name="name"
+							id="name"
 							placeholder="Enter your name"
 							class="input input-bordered w-full"
 						/>

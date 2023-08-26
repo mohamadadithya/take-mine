@@ -1,73 +1,37 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
-	import Chart from '$lib/components/Chart.svelte';
 	import IconWithBackground from '$lib/components/IconWithBackground.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import Table from '$lib/components/Table.svelte';
+	import ChartJS from 'chart.js/auto';
+	import { onMount } from 'svelte';
 
-	const barOptions = {
-		chart: {
-			type: 'bar'
-		},
-		colors: ['#047857'],
-		title: {
-			text: 'Joined Members by Month',
-			align: 'left'
-		},
-		series: [
-			{
-				data: [
+	let barChartEl: HTMLCanvasElement;
+
+	onMount(() => {
+		new ChartJS(barChartEl, {
+			type: 'bar',
+			data: {
+				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				datasets: [
 					{
-						x: 'January',
-						y: 10
-					},
-					{
-						x: 'February',
-						y: 18
-					},
-					{
-						x: 'March',
-						y: 13
+						label: '# of Votes',
+						data: [12, 19, 3, 5, 2, 3],
+						borderWidth: 1
 					}
 				]
+			},
+			options: {
+				maintainAspectRatio: false,
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				},
+				responsive: true
 			}
-		]
-	};
-
-	const lineOptions = {
-		series: [
-			{
-				name: 'Desktops',
-				data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-			}
-		],
-		chart: {
-			type: 'line',
-			zoom: {
-				enabled: false
-			}
-		},
-		colors: ['#047857'],
-		dataLabels: {
-			enabled: false
-		},
-		stroke: {
-			curve: 'straight'
-		},
-		title: {
-			text: 'Product Trends by Month',
-			align: 'left'
-		},
-		grid: {
-			row: {
-				colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-				opacity: 0.5
-			}
-		},
-		xaxis: {
-			categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
-		}
-	};
+		});
+	});
 
 	export let data;
 	const cards = data.cards;
@@ -105,7 +69,8 @@
 	</div>
 	<Table classes="mt-8" />
 	<div class="grid lg:grid-cols-2 gap-8 mt-10">
-		<Chart options={barOptions} />
-		<Chart options={lineOptions} />
+		<div class="shadow-md bg-white p-3 border rounded-xl h-[25rem]">
+			<canvas class="w-full" bind:this={barChartEl} />
+		</div>
 	</div>
 </section>
