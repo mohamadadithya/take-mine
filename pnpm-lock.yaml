@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@fontsource/poppins':
     specifier: ^5.0.8
@@ -22,6 +18,9 @@ devDependencies:
   '@playwright/test':
     specifier: ^1.37.1
     version: 1.37.1
+  '@svelte-put/clickoutside':
+    specifier: ^3.0.0
+    version: 3.0.0
   '@sveltejs/adapter-auto':
     specifier: next
     version: 1.0.0-next.91(@sveltejs/kit@1.23.0)
@@ -426,6 +425,10 @@ packages:
 
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
+    dev: true
+
+  /@svelte-put/clickoutside@3.0.0:
+    resolution: {integrity: sha512-a2aA0+uMo2LGK4bwQE+etra57cJuqQsXRkI0IM+cPzjIowqUg5CMSSeQ6YsXBJUdtzm/s6WQKcmoswK/875wtA==}
     dev: true
 
   /@sveltejs/adapter-auto@1.0.0-next.91(@sveltejs/kit@1.23.0):
@@ -2478,3 +2481,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

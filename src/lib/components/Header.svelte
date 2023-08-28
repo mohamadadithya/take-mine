@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { clickoutside } from '@svelte-put/clickoutside';
 	import { isOpenSidebar } from '$lib/stores/dashboardStore';
 	import ButtonDropdown from './ButtonDropdown.svelte';
 
@@ -38,7 +39,7 @@
 	<nav class="flex justify-between items-center">
 		<button
 			type="button"
-			on:click={() => isOpenSidebar.set(true)}
+			on:click|stopPropagation={() => isOpenSidebar.set(true)}
 			class="text-2xl block md:hidden text-primary-700 rounded-lg"
 		>
 			<i class="fas fa-bars" />
@@ -54,19 +55,17 @@
 			/>
 		</div>
 		<div class="flex items-center text-primary-700">
-			<button type="button" class="text-xl mr-2 md:mr-4">
-				<i class="fas fa-fw fa-moon" />
-			</button>
 			<div class="relative">
 				<button
 					type="button"
-					on:click={() => handleState('notifications')}
+					on:click|stopPropagation={() => handleState('notifications')}
 					class="text-xl mr-2 md:mr-5 relative"
 				>
 					<div class="absolute bg-red-700 h-3 w-3 right-0.5 rounded-full border border-white" />
 					<i class="fas fa-fw fa-bell" />
 				</button>
 				<div
+					use:clickoutside on:clickoutside={() => isOpenNotifications = false}
 					id="notifications"
 					class="absolute {isOpenNotifications
 						? ''
@@ -106,7 +105,7 @@
 					<a href="/" class="block text-center pt-3 text-sm border-t text-sky-600">Read More</a>
 				</div>
 			</div>
-			<ButtonDropdown on:click={() => handleState('dropdown')} {links} isOpen={isOpenDropdown}>
+			<ButtonDropdown on:click={() => handleState('dropdown')} {links} bind:isOpen={isOpenDropdown}>
 				<img src="/images/profile.svg" class="w-9" alt="Username" />
 			</ButtonDropdown>
 		</div>

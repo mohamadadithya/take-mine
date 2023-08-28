@@ -1,16 +1,22 @@
 <script lang="ts">
 	import { isOpenSidebar } from '$lib/stores/dashboardStore';
-	import { page } from '$app/stores';
+	import { page, navigating } from '$app/stores';
 	import { links } from '../data/links';
 	import { Settings } from '$lib/settings';
 	import NavDropdownLink from './NavDropdownLink.svelte';
+	import { clickoutside } from "@svelte-put/clickoutside"
 
 	let routeId: string;
 
-	$: routeId = $page.url.pathname;
+	$: {
+		routeId = $page.url.pathname;
+
+		if($navigating) isOpenSidebar.set(false)
+	}
 </script>
 
 <aside
+	use:clickoutside on:clickoutside={() => isOpenSidebar.set(false)}
 	class="overflow-y-auto h-full fixed {$isOpenSidebar
 		? 'translate-x-0'
 		: '-translate-x-full'} duration-300 md:translate-x-0 md:static z-20 md:block w-60 md:w-56 lg:w-64 bg-white flex-shrink-0 border-r"
