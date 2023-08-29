@@ -4,6 +4,7 @@
 	import IconWithBackground from '$lib/components/IconWithBackground.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
 	import Table from '$lib/components/Table.svelte';
+	import Icon from '@iconify/svelte';
 	import type { ApexOptions } from 'apexcharts';
 
 	export let data;
@@ -178,12 +179,12 @@
 		class="w-full flex justify-between items-center p-4 text-sm hover:bg-primary-800 bg-primary-700 text-white rounded-lg mt-3"
 	>
 		<div class="flex items-center">
-			<i class="fas fa-fw fa-star mr-2.5" />
+			<Icon icon="tabler:star-filled" class="mr-2.5 text-xl" />
 			<p>Star this dashboard on Github</p>
 		</div>
 		<div class="flex items-center">
 			<p class="mr-2">View more</p>
-			<i class="fas fa-fw fa-arrow-right" />
+			<Icon icon="mingcute:arrow-right-line" class="text-2xl" />
 		</div>
 	</a>
 	<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
@@ -201,6 +202,7 @@
 			</Card>
 		{/each}
 	</div>
+
 	<Table classes="mt-8" />
 
 	<div class="grid lg:grid-cols-2 gap-8 mt-10">

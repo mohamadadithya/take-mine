@@ -4,7 +4,7 @@ export function load() {
 		cards: [
 			{
 				name: 'Total Members',
-				icon: 'fa-users',
+				icon: 'fa6-solid:users',
 				value: '80,730',
 				colors: {
 					text: 'text-emerald-700',
@@ -13,7 +13,7 @@ export function load() {
 			},
 			{
 				name: 'Account Balance',
-				icon: 'fa-money-bill',
+				icon: 'ic:round-account-balance-wallet',
 				value: 'Rp. 1,5M',
 				colors: {
 					text: 'text-sky-700',
@@ -22,7 +22,7 @@ export function load() {
 			},
 			{
 				name: 'Live Events',
-				icon: 'fa-calendar-alt',
+				icon: 'material-symbols:event-note',
 				value: 50,
 				colors: {
 					text: 'text-red-700',
@@ -31,7 +31,7 @@ export function load() {
 			},
 			{
 				name: 'Total Packages',
-				icon: 'fa-boxes',
+				icon: 'fa-solid:boxes',
 				value: 120,
 				colors: {
 					text: 'text-indigo-700',

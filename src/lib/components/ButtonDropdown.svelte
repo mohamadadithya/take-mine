@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { clickoutside } from '@svelte-put/clickoutside';
 	import type { Link } from '$lib/data/links';
+	import Icon from '@iconify/svelte';
 
 	export let isOpen = true,
 		links: Link[] = [];
@@ -31,8 +32,8 @@
 		<ul>
 			{#each links as link}
 				<li>
-					<a class="py-2 px-2.5 rounded-md block hover:bg-gray-100" href={link.path}
-						><i class="far mr-1 fa-fw {link.icon}" />
+					<a class="py-2 px-2.5 rounded-md hover:bg-gray-100 flex items-center" href={link.path}>
+						<Icon icon={link.icon.inactive} class="mr-1 text-2xl" />
 						{link.name}</a
 					>
 				</li>
@@ -41,7 +42,7 @@
 				<form method="POST">
 					<button type="button" class="btn btn-error w-full rounded-full">
 						Logout
-						<i class="far ml-1 fa-fw fa-sign-out text-lg" />
+						<Icon icon="solar:logout-linear" class="ml-1 text-2xl" />
 					</button>
 				</form>
 			</li>

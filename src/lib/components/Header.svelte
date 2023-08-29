@@ -2,22 +2,25 @@
 	import { clickoutside } from '@svelte-put/clickoutside';
 	import { isOpenSidebar } from '$lib/stores/dashboardStore';
 	import ButtonDropdown from './ButtonDropdown.svelte';
+	import Icon from '@iconify/svelte';
+	import type { Link } from '$lib/data/links';
 
-	const links = [
+	const links: Link[] = [
 		{
 			name: 'Profile',
 			path: '/profile',
-			icon: 'fa-user'
+			icon: {
+				inactive: 'bx:user',
+				active: 'bxs:user'
+			}
 		},
 		{
 			name: 'Settings',
 			path: '/settings',
-			icon: 'fa-cog'
-		},
-		{
-			name: 'Logout',
-			path: '/logout',
-			icon: 'fa-sign-out-alt'
+			icon: {
+				inactive: 'basil:settings-outline',
+				active: 'basil:settings'
+			}
 		}
 	];
 
@@ -47,7 +50,7 @@
 		<div
 			class="ring-2 w-48 md:w-auto mx-2 md:mr-4 md:ml-0 ring-transparent focus-within:bg-transparent bg-gray-100 rounded-md py-1.5 flex items-center px-3"
 		>
-			<i class="fas fa-fw fa-search text-primary-700" />
+			<Icon icon="fe:search" class="text-primary-700 text-2xl" />
 			<input
 				type="text"
 				class="w-full outline-none bg-transparent px-2 placeholder:text-black"
@@ -62,10 +65,11 @@
 					class="text-xl mr-2 md:mr-5 relative"
 				>
 					<div class="absolute bg-red-700 h-3 w-3 right-0.5 rounded-full border border-white" />
-					<i class="fas fa-fw fa-bell" />
+					<Icon icon="fa-solid:bell" class="text-3xl" />
 				</button>
 				<div
-					use:clickoutside on:clickoutside={() => isOpenNotifications = false}
+					use:clickoutside
+					on:clickoutside={() => (isOpenNotifications = false)}
 					id="notifications"
 					class="absolute {isOpenNotifications
 						? ''

@@ -1,7 +1,10 @@
 interface Link {
 	name: string;
 	path?: string;
-	icon: string;
+	icon: {
+		inactive: string;
+		active: string;
+	}
 	nested_links?: Link[];
 }
 
@@ -9,31 +12,49 @@ export const links: Link[] = [
 	{
 		name: 'Dashboard',
 		path: '/',
-		icon: 'fa-house'
+		icon: {
+			inactive: 'ph:house',
+			active: 'ph:house-fill',
+		}
 	},
 	{
 		name: 'Forms',
 		path: '/forms',
-		icon: 'fa-clipboard-list-check'
+		icon: {
+			inactive: 'fluent:form-48-regular',
+			active: 'fluent:form-48-filled'
+		},
 	},
 	{
 		name: 'Cards',
 		path: '/cards',
-		icon: 'fa-credit-card-blank'
+		icon: {
+			inactive: 'mdi:cards-outline',
+			active: 'mdi:cards'
+		}
 	},
 	{
 		name: 'Pages',
-		icon: 'fa-copy',
+		icon: {
+			inactive: 'mdi:papers-outline',
+			active: 'mdi:papers'
+		},
 		nested_links: [
 			{
 				name: 'Login',
 				path: '/login',
-				icon: 'fa-sign-in'
+				icon: {
+					inactive: 'solar:login-linear',
+					active: 'solar:login-bold'
+				}
 			},
 			{
 				name: 'Register',
 				path: '/register',
-				icon: 'fa-user'
+				icon: {
+					inactive: 'bx:user',
+					active: 'bxs:user'
+				}
 			}
 		]
 	}

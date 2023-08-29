@@ -1,6 +1,7 @@
 <script>
 	import Card from '$lib/components/Card.svelte';
 	import PageTitle from '$lib/components/PageTitle.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
 <PageTitle name="Forms" />
@@ -94,9 +95,10 @@
 							</div>
 						</div>
 					</fieldset>
-					<button type="submit" class="btn btn-primary mt-5"
-						>Send <i class="fas fa-fw fa-paper-plane" /></button
-					>
+					<button type="submit" class="btn btn-primary mt-5">
+						Send
+						<Icon icon="ion:paper-plane" class="text-xl" />
+					</button>
 				</form>
 			</Card>
 		</div>
