@@ -1,5 +1,5 @@
 <script>
-	import { Settings } from '$lib/settings';
+	import { PUBLIC_SITE_NAME } from '$env/static/public';
 </script>
 
 <svelte:head>
@@ -133,7 +133,7 @@
 						<label
 							for="checkbox-tos"
 							class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-							>By signing up, you are creating a {Settings.SITE_NAME} account, and you agree to {Settings.SITE_NAME}'s
+							>By signing up, you are creating a {PUBLIC_SITE_NAME} account, and you agree to {PUBLIC_SITE_NAME}'s
 							<a href="/">Terms of Use</a>
 							and <a href="/">Privacy Policy</a>.</label
 						>
@@ -161,7 +161,7 @@
 		<div
 			class="bg-primary-700 text-white xl:h-screen flex flex-col justify-center items-start p-6 md:p-16"
 		>
-			<a href="/" class="text-2xl mb-3 font-bold text-white">{Settings.SITE_NAME}</a>
+			<a href="/" class="text-2xl mb-3 font-bold text-white">{PUBLIC_SITE_NAME}</a>
 			<h2 class="text-3xl md:text-5xl font-bold mb-6">
 				Explore the world's leading design portfolios.
 			</h2>

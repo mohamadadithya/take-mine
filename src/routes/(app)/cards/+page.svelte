@@ -1,6 +1,6 @@
 <script>
-	import Card from '$lib/components/Card.svelte';
-	import PageTitle from '$lib/components/PageTitle.svelte';
+	import Card from '$components/Card.svelte';
+	import PageTitle from '$components/PageTitle.svelte';
 </script>
 
 <PageTitle name="Cards" />

@@ -7,6 +7,9 @@ const config = {
 		adapter: adapter(),
 		version: {
 			pollInterval: 5000
+		},
+		alias: {
+			$components: "src/lib/components"
 		}
 	},
 	preprocess: vitePreprocess()

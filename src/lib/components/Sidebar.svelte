@@ -2,10 +2,10 @@
 	import { isOpenSidebar } from '$lib/stores/dashboardStore';
 	import { page, navigating } from '$app/stores';
 	import { links } from '../data/links';
-	import { Settings } from '$lib/settings';
 	import NavDropdownLink from './NavDropdownLink.svelte';
 	import { clickoutside } from '@svelte-put/clickoutside';
 	import Icon from '@iconify/svelte';
+	import { PUBLIC_SITE_NAME } from '$env/static/public';
 
 	let routeId: string;
 
@@ -29,7 +29,7 @@
 		>
 			<Icon icon="uil:times" class="text-2xl" />
 		</button>
-		<a href="/" class="px-4 text-2xl font-bold text-primary-700">{Settings.SITE_NAME}</a>
+		<a href="/" class="px-4 text-2xl font-bold text-primary-700">{PUBLIC_SITE_NAME}</a>
 		<ul class="mt-5">
 			{#each links as link}
 				<li>

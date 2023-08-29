@@ -1,10 +1,8 @@
 <script lang="ts">
-	import Sidebar from '$lib/components/Sidebar.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import { Settings } from '$lib/settings';
+	import Sidebar from '$components/Sidebar.svelte';
+	import Header from '$components/Header.svelte';
 	import { navigating } from '$app/stores';
-
-	const { SITE_NAME } = Settings;
+	import { PUBLIC_SITE_NAME } from '$env/static/public';
 
 	let wrapperEl: HTMLElement;
 
@@ -14,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{SITE_NAME}</title>
+	<title>{PUBLIC_SITE_NAME}</title>
 </svelte:head>
 
 <section id="body">
