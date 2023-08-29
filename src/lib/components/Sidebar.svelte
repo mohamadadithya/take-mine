@@ -11,7 +11,6 @@
 
 	$: {
 		routeId = $page.url.pathname;
-
 		if ($navigating) isOpenSidebar.set(false);
 	}
 </script>

@@ -45,7 +45,7 @@
 			on:click|stopPropagation={() => isOpenSidebar.set(true)}
 			class="text-2xl block md:hidden text-primary-700 rounded-lg"
 		>
-			<i class="fas fa-bars" />
+			<Icon icon="mingcute:menu-fill" class="text-3xl" />
 		</button>
 		<div
 			class="ring-2 w-48 md:w-auto mx-2 md:mr-4 md:ml-0 ring-transparent focus-within:bg-transparent bg-gray-100 rounded-md py-1.5 flex items-center px-3"
