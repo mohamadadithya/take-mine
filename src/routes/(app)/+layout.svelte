@@ -8,7 +8,9 @@
 
 	let wrapperEl: HTMLElement;
 
-	$: if ($navigating) wrapperEl.scrollTo(0, 0);
+	$: if ($navigating) {
+		if (wrapperEl) wrapperEl.scrollTo(0, 0);
+	}
 </script>
 
 <svelte:head>
