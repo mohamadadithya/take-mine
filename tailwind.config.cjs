@@ -11,6 +11,18 @@ module.exports = {
 			},
 			colors: {
 				primary: colors.emerald
+			},
+			screens: {
+				xs: '412px',
+				'pre-md': '540px',
+				'pre-lg': '912px',
+				'pre-2xl': '1360px'
+			},
+			borderRadius: {
+				pill: '35rem'
+			},
+			boxShadow: {
+				soft: 'rgba(0, 0, 0, 0.1) 0px 4px 12px'
 			}
 		}
 	},
